@@ -40,6 +40,9 @@ first_std_start, first_std_end = s_mean-s_std, s_mean+s_std
 second_std_start, second_std_end = s_mean-(s_std*2), s_mean+(s_std*2)
 third_std_start, third_std_end = s_mean-(s_std*3), s_mean+(s_std*3)
 
+z_score = (mean-s_mean)/s_std
+print("The z score of sample 3 is ", z_score)
+
 fig = ff.create_distplot([mean_list],["reading_time"], show_hist = False)
 fig.add_trace(go.Scatter(x=[mean,mean], y=[0,0.8], mode="lines", name="Mean"))
 fig.add_trace(go.Scatter(x=[first_std_start,first_std_start],y=[0,0.7],mode="lines",name="First std start"))
